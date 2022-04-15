@@ -115,7 +115,7 @@ function App() {
         <Table
           filteredData={filteredData}
           page={page}
-          handlePaginationChange={() => handlePaginationChange()}
+          handlePaginationChange={handlePaginationChange}
         />
       )}
     </Container>
