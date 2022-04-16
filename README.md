@@ -1,6 +1,6 @@
 # Random User App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Typescript.
 
 ## About this project
 
@@ -30,5 +30,17 @@ git add .
 git commit -m "Commit"
 git push -u origin main
 ```
+
+## Test Lint
+
+To check lint error
+`yarn lint`
+
+To fix lint error
+`yarn lint:fix`
+
+## Running a Test
+
+`yarn test`
 
 You can check this website live at [Random User App](https://random-user-silk.vercel.app)

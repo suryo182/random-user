@@ -1,10 +1,10 @@
-import { initialState, reducer } from '../reducer/reducer';
-import { useActions } from '../actions';
-import { useReducer, createContext } from 'react';
+import { useReducer, createContext } from "react";
+import { initialState, reducer } from "../reducer/reducer";
+import { useActions } from "../actions";
 
 const StoreContext = createContext(initialState);
 
-const StoreProvider: any = ({ children }: any) => {
+function StoreProvider({ children }: any): any {
   const [state, dispatch] = useReducer(reducer, initialState);
   const actions = useActions(state, dispatch);
 
@@ -13,6 +13,6 @@ const StoreProvider: any = ({ children }: any) => {
       {children}
     </StoreContext.Provider>
   );
-};
+}
 
 export { StoreContext, StoreProvider };

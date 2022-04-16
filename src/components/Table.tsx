@@ -1,41 +1,33 @@
-import { Pagination, Table as AntdTable } from 'antd';
+import { Pagination, Table as AntdTable } from "antd";
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    sorter: (a: any, b: any) => {
-      return a.name.first.localeCompare(b.name.first);
-    },
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    sorter: (a: any, b: any) => a.name.first.localeCompare(b.name.first),
     render: (text: any) => (
       <span>{`${text.title} ${text.first} ${text.last}`}</span>
     ),
   },
   {
-    title: 'Gender',
-    dataIndex: 'gender',
-    key: 'gender',
-    sorter: (a: any, b: any) => {
-      return a.gender.localeCompare(b.gender);
-    },
+    title: "Gender",
+    dataIndex: "gender",
+    key: "gender",
+    sorter: (a: any, b: any) => a.gender.localeCompare(b.gender),
   },
   {
-    title: 'Location',
-    dataIndex: 'location',
-    key: 'location',
-    sorter: (a: any, b: any) => {
-      return a.location.city.localeCompare(b.location.city);
-    },
+    title: "Location",
+    dataIndex: "location",
+    key: "location",
+    sorter: (a: any, b: any) => a.location.city.localeCompare(b.location.city),
     render: (text: any) => <span>{text.city}</span>,
   },
   {
-    title: 'Email',
-    key: 'email',
-    dataIndex: 'email',
-    sorter: (a: any, b: any) => {
-      return a.email.localeCompare(b.email);
-    },
+    title: "Email",
+    key: "email",
+    dataIndex: "email",
+    sorter: (a: any, b: any) => a.email.localeCompare(b.email),
   },
 ];
 
@@ -45,14 +37,14 @@ interface TableProps {
   handlePaginationChange?: any;
 }
 
-const Table = ({ filteredData, page, handlePaginationChange }: TableProps) => {
+function Table({ filteredData, page, handlePaginationChange }: TableProps) {
   return (
     <>
       <AntdTable
         columns={columns}
         dataSource={filteredData}
         pagination={false}
-        style={{ marginBottom: '20px' }}
+        style={{ marginBottom: "20px" }}
         rowKey="phone"
       />
       <Pagination
@@ -63,6 +55,6 @@ const Table = ({ filteredData, page, handlePaginationChange }: TableProps) => {
       />
     </>
   );
-};
+}
 
 export default Table;

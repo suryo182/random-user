@@ -4,7 +4,7 @@ export const userDataStates = {
 
 export const userDataReducer = (state: any, action: any) => {
   switch (action.type) {
-    case 'FETCH_DATA':
+    case "FETCH_DATA":
       return {
         ...state,
         list: action.payload,

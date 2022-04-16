@@ -1,7 +1,5 @@
-import { userDataActions } from './userDataActions';
+import { userDataActions } from "./userDataActions";
 
-export const useActions = (state: any, dispatch: any) => {
-  return {
-    userDataActions: userDataActions({ state, dispatch }),
-  };
-};
+export const useActions = (state: any, dispatch: any) => ({
+  userDataActions: userDataActions({ state, dispatch }),
+});
