@@ -1,10 +1,10 @@
 import { initialState, reducer } from '../reducer/reducer';
 import { useActions } from '../actions';
-import React, { createContext, useReducer } from 'react';
+import { useReducer, createContext } from 'react';
 
 const StoreContext = createContext(initialState);
 
-const StoreProvider = ({ children }) => {
+const StoreProvider: any = ({ children }: any) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const actions = useActions(state, dispatch);
 

@@ -1,8 +1,8 @@
 import { Button, Input, Select, Spin } from 'antd';
 import React, { useContext, useEffect, useState } from 'react';
-import { StoreContext } from './context/stores/storeContext';
 import Table from './components/Table';
-import { Container, NavWrapper, Label } from './styles';
+import { StoreContext } from './context/stores/storeContext';
+import { Container, Label, NavWrapper } from './styles';
 import debounce from './utils/debouce';
 
 const { Search } = Input;
@@ -59,15 +59,15 @@ function App() {
     }
   }, [search, searchGender]); // eslint-disable-line
 
-  const handleSearchName = (e) => {
+  const handleSearchName = (e: string) => {
     setSearch(e);
   };
 
-  const handleFilterGender = (e) => {
+  const handleFilterGender = (e: string) => {
     setSearchGender(e);
   };
 
-  const handlePaginationChange = (e) => {
+  const handlePaginationChange = (e: number) => {
     const fetchUserData = async () =>
       await actions.userDataActions.fetchData({ page: e, results: 10 });
     fetchUserData();

@@ -5,7 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { StoreProvider } from './context/stores/storeContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 root.render(
   <React.StrictMode>
     <StoreProvider>

@@ -2,7 +2,7 @@ export const loadingStates = {
   loading: false,
 };
 
-export const loadingReducer = (state, action) => {
+export const loadingReducer = (state: any, action: any) => {
   switch (action.type) {
     case 'LOADING_START':
       return {

@@ -2,7 +2,7 @@ export const userDataStates = {
   list: [],
 };
 
-export const userDataReducer = (state, action) => {
+export const userDataReducer = (state: any, action: any) => {
   switch (action.type) {
     case 'FETCH_DATA':
       return {
